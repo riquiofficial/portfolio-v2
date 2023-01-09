@@ -24,13 +24,20 @@ const changeTheme = () => {
 <template>
   <v-app :theme=theme>
     <v-app-bar @mouseleave="reduceElevation" @mouseenter="raiseElevation" :elevation="elevation" title="Navigation" >
-    <v-navigation-drawer>Menu stuff</v-navigation-drawer>
+      <v-app-bar-nav-icon ><v-icon icon="fa:fas fa:fa-list" /></v-app-bar-nav-icon>
 
-    <v-btn
-        @click="changeTheme"
-      >Toggle Theme</v-btn>
-    
+      <v-btn @click="changeTheme">
+        Toggle Theme
+      </v-btn>
+
+      
     </v-app-bar>
+    <v-main>
+      <v-container>Content area</v-container>
+      
+      <v-icon icon="fa:fas fa:fa-plus" />
+      <v-icon icon="mdi:mdi-minus" /> 
 
+    </v-main>
   </v-app>
 </template>
