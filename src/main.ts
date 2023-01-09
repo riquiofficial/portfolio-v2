@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 
-
 import './assets/main.css'
 
 // Vuetify

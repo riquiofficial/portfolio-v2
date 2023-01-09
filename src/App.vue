@@ -1,22 +1,23 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { mdiMenu, mdiMoonWaningCrescent, mdiWhiteBalanceSunny  } from '@mdi/js'
+
 
 const elevation = ref(2)
 const theme = ref('dark')
-
+const isDarkTheme = () => theme.value === "light"
 
 const raiseElevation = () => {
   elevation.value = 5
-  console.log(elevation)
 }
 
 const reduceElevation = () => {
   elevation.value = 1
-  console.log(elevation)
 }
 
 const changeTheme = () => {
-  theme.value = theme.value === 'light' ? 'dark' : 'light'
+  theme.value = isDarkTheme() ? 'dark' : 'light'
+  console.log(theme.value)
 }
 
 </script>
@@ -24,19 +25,17 @@ const changeTheme = () => {
 <template>
   <v-app :theme=theme>
     <v-app-bar @mouseleave="reduceElevation" @mouseenter="raiseElevation" :elevation="elevation" title="Navigation" >
-      <v-app-bar-nav-icon ><v-icon icon="fa:fas fa:fa-list" /></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon ><v-icon :icon="mdiMenu" /></v-app-bar-nav-icon>
 
-      <v-btn @click="changeTheme">
-        Toggle Theme
+      <v-btn @click="changeTheme()">
+        <v-icon :icon="isDarkTheme() ? mdiMoonWaningCrescent : mdiWhiteBalanceSunny" />
       </v-btn>
-
+      
       
     </v-app-bar>
     <v-main>
       <v-container>Content area</v-container>
       
-      <v-icon icon="fa:fas fa:fa-plus" />
-      <v-icon icon="mdi:mdi-minus" /> 
 
     </v-main>
   </v-app>
