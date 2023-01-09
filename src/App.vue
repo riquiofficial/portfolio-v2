@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import ROUTES from './router/routePaths';
 
-const routes = ref(ROUTES)
 </script>
 
 <template>
@@ -15,8 +13,8 @@ const routes = ref(ROUTES)
       <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink :to=routes.HOME>Home</RouterLink>
-        <RouterLink :to=routes.ABOUT>About</RouterLink>
+        <RouterLink :to=ROUTES.HOME>Home</RouterLink>
+        <RouterLink :to=ROUTES.ABOUT>About</RouterLink>
       </nav>
     </div>
   </header>
