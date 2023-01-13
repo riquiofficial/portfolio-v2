@@ -1,3 +1,5 @@
+# portfolio-v2
+Creating a new, updated portfolio website while trying out the Vue framework
 # Richard Quigley Portfolio Vue
 
 This template should help get you started developing with Vue 3 in Vite.
